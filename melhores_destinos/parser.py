@@ -14,9 +14,8 @@ class Parser():
         result_lis = result_div.find_all('li')
         final_lis = []
         for i, li in enumerate(result_lis):
-            result_span = li.find('span',{'class':'categoria-publicacao'})
             for country in static.COUTRYS:
-                if result_span is not None and country in result_span.text.upper() and self._is_valor_valido(li):
+                if  country in li.text.upper() and self._is_valor_valido(li):
                     final_lis.append(li)
         return self._get_urls_by_lis(final_lis)
 
@@ -30,7 +29,7 @@ class Parser():
         return result_a
 
     def _is_valor_valido(self, li):
-        valor = re.search(r"R\$ \d{1}.\d{3}", li.find('p').text)
+        valor = re.search(r"R\$ \d{3}|\d{1}.\d{3}", li.find('p').text)
         if valor is None:
             return False
         return 2000 > self._str_to_int_valor_passagem(valor.group())

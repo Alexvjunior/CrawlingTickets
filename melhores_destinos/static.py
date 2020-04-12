@@ -23,12 +23,13 @@ COUTRYS = [
     "ORLANDO",
     "PORTUGAL",
     "FRANÇA",
-    "ESPANHA"
+    "ESPANHA",
+    "MIAMI"
 ]
 
 CITYS = {
-    'FLN': 2090,
-    'JOI': 1890,
-    'POA': 1890,
-    'CWB': 1690
+    'FLN': 1890,
+    'JOI': 1790,
+    'POA': 1790,
+    'CWB': 1380
 }
